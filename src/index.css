@@ -1,3 +1,10 @@
+/* =========================================================================
+   Web psicología — Estética "Consultorio cálido"
+   Crema, verde salvia, marrón tierra. Serif suave (Fraunces) + Inter.
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,89 +12,169 @@
 }
 
 :root {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Paleta */
+  --cream: #F5EFE3;
+  --cream-soft: #EFE7D8;
+  --paper: #FBF8F1;
+  --ink: #2D2A26;
+  --ink-soft: #5A544C;
+  --muted: #8A8378;
+  --sage: #6B7F6E;
+  --sage-deep: #3F5A4A;
+  --earth: #A87C5C;
+  --earth-deep: #7A5538;
+  --line: #E2D9C5;
 
-  color-scheme: light;
-  color: #333;
-  background-color: #f8f9fa;
+  /* Tipografía */
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  /* Sistema */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-soft: 0 2px 12px rgba(45, 42, 38, 0.06);
+  --shadow-lift: 0 8px 28px rgba(45, 42, 38, 0.10);
+  --max-w: 1100px;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
-  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   min-width: 320px;
   min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+h3 { font-size: 1.35rem; }
+h4 { font-size: 1.1rem; }
+
+p { color: var(--ink-soft); }
 
 a {
-  font-weight: 500;
-  color: #667eea;
-  text-decoration: inherit;
+  color: var(--sage-deep);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
+a:hover { color: var(--earth-deep); }
 
-a:hover {
-  color: #5568d3;
-}
+img { max-width: 100%; height: auto; display: block; }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
   cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ---------- Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section--paper { background: var(--paper); }
+.section--cream { background: var(--cream); }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.btn--primary {
+  background: var(--sage-deep);
+  color: var(--cream);
+}
+.btn--primary:hover {
+  background: var(--ink);
+  color: var(--cream);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+}
+.btn--ghost:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+/* ---------- Avatar / foto ---------- */
+.avatar-wrap {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: var(--cream-soft);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar-wrap svg { display: block; }
+
+/* ---------- Tarjetas genéricas ---------- */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px;
   transition: all 0.3s ease;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Responsive images */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Remove default list styles */
-ul, ol {
-  list-style: none;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #667eea;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #5568d3;
-}
+/* ---------- Scrollbar discreta ---------- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--sage-deep); }

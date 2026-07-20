@@ -1,127 +1,76 @@
-import { FaGraduationCap, FaAward, FaUserMd } from 'react-icons/fa';
-
 export default function About() {
   return (
-    <section style={{ 
-      padding: '80px 20px', 
-      maxWidth: '1100px', 
-      margin: '0 auto',
-      background: 'white'
-    }}>
-      <h2 style={{ 
-        fontSize: 'clamp(2rem, 4vw, 2.5rem)', 
-        color: '#667eea', 
-        marginBottom: '20px',
-        textAlign: 'center',
-        fontWeight: '700'
-      }}>
-        Sobre mí
-      </h2>
-      
-      <p style={{ 
-        textAlign: 'center', 
-        color: '#666', 
-        marginBottom: '50px',
-        fontSize: '1.1rem'
-      }}>
-        Comprometido con tu bienestar emocional
-      </p>
+    <section id="sobre-mi" className="section section--cream">
+      <div className="container">
 
-      <div style={{ 
-        display: 'grid', 
-        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-        gap: '30px',
-        marginBottom: '50px'
-      }}>
-        {/* Tarjeta 1 */}
-        <div style={{
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          padding: '35px',
-          borderRadius: '20px',
-          color: 'white',
-          textAlign: 'center',
-          boxShadow: '0 10px 30px rgba(102, 126, 234, 0.2)',
-          transition: 'transform 0.3s ease'
-        }}
-        onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-        onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-        >
-          <FaGraduationCap style={{ fontSize: '3rem', marginBottom: '15px' }} />
-          <h3 style={{ fontSize: '1.3rem', marginBottom: '10px' }}>Formación</h3>
-          <p style={{ fontSize: '0.95rem', lineHeight: '1.6', opacity: 0.95 }}>
-            Psicólogo General Sanitario con sólida formación académica y práctica clínica
-          </p>
+        <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto 64px' }}>
+          <span className="eyebrow">Sobre mí</span>
+          <h2>Cómo trabajo</h2>
         </div>
 
-        {/* Tarjeta 2 */}
         <div style={{
-          background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-          padding: '35px',
-          borderRadius: '20px',
-          color: 'white',
-          textAlign: 'center',
-          boxShadow: '0 10px 30px rgba(240, 147, 251, 0.2)',
-          transition: 'transform 0.3s ease'
-        }}
-        onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-        onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-        >
-          <FaAward style={{ fontSize: '3rem', marginBottom: '15px' }} />
-          <h3 style={{ fontSize: '1.3rem', marginBottom: '10px' }}>Especialización</h3>
-          <p style={{ fontSize: '0.95rem', lineHeight: '1.6', opacity: 0.95 }}>
-            Máster en Atención Temprana y Máster en Gerontología
-          </p>
-        </div>
-
-        {/* Tarjeta 3 */}
-        <div style={{
-          background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-          padding: '35px',
-          borderRadius: '20px',
-          color: 'white',
-          textAlign: 'center',
-          boxShadow: '0 10px 30px rgba(79, 172, 254, 0.2)',
-          transition: 'transform 0.3s ease'
-        }}
-        onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-        onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-        >
-          <FaUserMd style={{ fontSize: '3rem', marginBottom: '15px' }} />
-          <h3 style={{ fontSize: '1.3rem', marginBottom: '10px' }}>Experiencia</h3>
-          <p style={{ fontSize: '0.95rem', lineHeight: '1.6', opacity: 0.95 }}>
-            Amplia experiencia en intervención psicológica con todas las edades
-          </p>
-        </div>
-      </div>
-
-      {/* Descripción personal */}
-      <div style={{ 
-        maxWidth: '800px', 
-        margin: '0 auto',
-        fontSize: '1.1rem', 
-        color: '#555',
-        lineHeight: '1.8',
-        textAlign: 'center'
-      }}>
-        <p style={{ marginBottom: '20px' }}>
-          Mi enfoque terapéutico se basa en la <strong>escucha activa</strong> y el 
-          <strong> respeto a la individualidad</strong> de cada persona. Creo firmemente que 
-          cada paciente es único y merece un tratamiento personalizado.
-        </p>
-        <p style={{ marginBottom: '20px' }}>
-          Con formación especializada en <strong>Atención Temprana</strong> (niños de 0 a 6 años) 
-          y <strong>Psicogerontología</strong> (tercera edad), ofrezco intervenciones adaptadas 
-          a las necesidades específicas de cada etapa vital.
-        </p>
-        <p style={{ 
-          fontStyle: 'italic', 
-          color: '#667eea',
-          fontSize: '1.2rem',
-          marginTop: '30px',
-          fontWeight: '500'
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: 24,
+          marginBottom: 64
         }}>
-          "El primer paso para el cambio es entender que mereces estar bien"
-        </p>
+          <div className="card">
+            <h3 style={{ marginBottom: 10 }}>Atención temprana (0–6 años)</h3>
+            <p>
+              Intervención con niños pequeños y sus familias cuando algo en el desarrollo
+              preocupa: lenguaje, conducta, relación con los iguales, regulación emocional.
+              Trabajo siempre con los padres dentro del proceso, no como espectadores.
+            </p>
+          </div>
+
+          <div className="card">
+            <h3 style={{ marginBottom: 10 }}>Adultos</h3>
+            <p>
+              Ansiedad, bajo estado de ánimo, duelos, crisis vitales, problemas de pareja
+              o momentos en los que uno ya no se reconoce. También acompaño en procesos
+              largos de cambio cuando la motivación no termina de aparecer.
+            </p>
+          </div>
+
+          <div className="card">
+            <h3 style={{ marginBottom: 10 }}>Psicogerontología</h3>
+            <p>
+              Atención a personas mayores y orientación a sus familias: adaptación a
+              pérdidas, deterioro cognitivo leve, sobrecarga del cuidador, decisiones
+              difíciles sobre dependencia o vivienda.
+            </p>
+          </div>
+        </div>
+
+        <div style={{ maxWidth: 760, margin: '0 auto', fontSize: '1.05rem', lineHeight: 1.8 }}>
+          <p style={{ marginBottom: 20 }}>
+            Mi enfoque es integrador, pero con un peso claro en la terapia cognitivo-conductual
+            y la psicología basada en la evidencia. No creo en soluciones mágicas ni en
+            encajar a todos en el mismo protocolo. Si algo no funciona, lo cambiamos.
+          </p>
+          <p style={{ marginBottom: 20 }}>
+            Trabajo exclusivamente online desde hace años. Eso me ha enseñado dos cosas:
+            que la pantalla no resta profundidad cuando el vínculo está bien, y que muchos
+            pacientes que nunca pisarían una consulta sí dan el paso desde su salón.
+          </p>
+          <p style={{ marginBottom: 36 }}>
+            No soy el profesional adecuado para urgencias ni para casos que requieran
+            coordinación con psiquiatría presencial. Si es tu caso, te lo digo en la
+            primera sesión y te ayudo a derivar.
+          </p>
+
+          <p style={{
+            fontFamily: 'var(--font-serif)',
+            fontSize: '1.25rem',
+            color: 'var(--ink)',
+            borderLeft: '2px solid var(--sage)',
+            paddingLeft: 18,
+            fontStyle: 'italic'
+          }}>
+            Pedir ayuda no es rendirse. Es, casi siempre, el primer movimiento honesto.
+          </p>
+        </div>
+
       </div>
     </section>
   );
